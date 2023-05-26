@@ -129,18 +129,10 @@ class PatientRegisterFragment : Fragment() {
         db.collection("patients")
             .add(user)
             .addOnSuccessListener {
-                Toast.makeText(
-                    requireActivity(),
-                    "Register in firestore Successfully",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(requireActivity(), "Register in firestore Successfully", Toast.LENGTH_SHORT).show()
             }
             .addOnSuccessListener { e ->
-                Toast.makeText(
-                    requireActivity(),
-                    "Register in firestore Fail $e",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(requireActivity(), "Register in firestore Fail $e", Toast.LENGTH_SHORT).show()
                 Log.d("Error adding document", e.toString())
             }
     }

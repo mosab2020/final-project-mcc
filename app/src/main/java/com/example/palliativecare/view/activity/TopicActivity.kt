@@ -14,6 +14,7 @@ class TopicActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTopicBinding
     private var playbackPosition = 0
     private lateinit var mediaController: MediaController
+    var videoURL: String = " "
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +41,7 @@ class TopicActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        val uri = Uri.parse("")
+        val uri = Uri.parse(videoURL)
         binding.topicVideoView.setVideoURI(uri)
         binding.topicProgressBar.visibility = View.VISIBLE
     }

@@ -33,6 +33,7 @@ class HomeFragment : Fragment() {
                 for (document in it) {
                     data.add(
                         Topic(
+                            document.id,
                             document.data["imageURL"].toString(),
                             document.data["title"].toString(),
                             document.data["description"].toString()
@@ -49,20 +50,6 @@ class HomeFragment : Fragment() {
                 Log.d("Added Failure", "Added Failure")
 
             }
-
-        /*
-         LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        list.setLayoutManager(llm);
-        list.setAdapter( adapter );*/
-//        val llm = LinearLayoutManager(requireActivity())
-//        llm.setOrientation(LinearLayoutManager.VERTICAL)
-//        binding.homeRecyclerView.setLayoutManager(llm)
-//        binding.homeRecyclerView.setAdapter(TopicAdapter(requireActivity(),data))
-//        binding.homeRecyclerView.layoutManager = LinearLayoutManager(requireActivity())
-//        val topicsAdapter = TopicAdapter(requireActivity(), data)
-//        binding.homeRecyclerView.adapter = topicsAdapter
-
 
         return binding.root
     }
